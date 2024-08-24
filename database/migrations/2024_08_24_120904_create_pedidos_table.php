@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('custo_de_envio', 10, 2)->nullable();
             $table->string('metodo_de_envio')->nullable();
             $table->text('notas')->nullable();
-            $table->$table->timestamps();
+            $table->timestamps();
         });
     }
 
