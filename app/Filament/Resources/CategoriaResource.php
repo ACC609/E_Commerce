@@ -39,7 +39,7 @@ class CategoriaResource extends Resource
                                     ->required()
                                     ->live()
                                     ->afterStateUpdated(fn(string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
-                                    ->maxLength(255), // Corrija "maxLegth" para "maxLength"
+                                    ->maxLength(255),
 
                                 TextInput::make('slug')
                                     ->maxLength(255)

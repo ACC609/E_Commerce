@@ -17,11 +17,12 @@ class Produto extends Model
 
     public function categorias()
     {
-        return $this->BelongsTo(Categoria::class);
+        return $this->belongsTo(Categoria::class, 'id_categoria');
     }
+
     public function marca()
     {
-        return $this->BelongsTo(Marca::class);
+        return $this->belongsTo(Marca::class, 'id_marca');
     }
     public function pedidoItem()
     {
