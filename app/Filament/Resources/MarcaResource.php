@@ -35,7 +35,7 @@ class MarcaResource extends Resource
                             ->schema([
                                 TextInput::make('nome')
                                     ->required()
-                                    ->live()
+                                    ->live(onBlur: true)
                                     ->afterStateUpdated(fn(string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
                                     ->maxLength(255),
 

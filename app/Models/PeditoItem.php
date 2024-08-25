@@ -13,10 +13,10 @@ class PeditoItem extends Model
 
     public function pedidos()
     {
-        return $this->belongsTo(Pedido::class);
+        return $this->belongsTo(Pedido::class, 'id_pedido');
     }
     public function produto()
     {
-        return $this->belongsTo(Pedido::class);
+        return $this->belongsTo(Produto::class, 'id_produto');
     }
 }

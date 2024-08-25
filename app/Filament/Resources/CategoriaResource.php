@@ -37,7 +37,7 @@ class CategoriaResource extends Resource
                             ->schema([ // Use "schema" ao invés de "Schema"
                                 TextInput::make('nome')
                                     ->required()
-                                    ->live()
+                                    ->live(onBlur: true)
                                     ->afterStateUpdated(fn(string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
                                     ->maxLength(255),
 

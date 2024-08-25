@@ -9,6 +9,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
@@ -140,9 +141,15 @@ class ProdutoResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
             ])
             ->filters([
-                //
+                SelectFilter::make('categorias')
+                    ->relationship('categorias', 'nome')
+                    ->label('Categorias'),
+                SelectFilter::make('marca')
+                    ->relationship('marca', 'nome')
+                    ->label('Marcas'),
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
