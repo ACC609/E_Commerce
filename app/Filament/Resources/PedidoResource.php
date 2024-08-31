@@ -4,6 +4,8 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PedidoResource\Pages;
 use App\Filament\Resources\PedidoResource\RelationManagers;
+use App\Filament\Resources\PedidoResource\RelationManagers\EnderecoRelationManager;
+use App\Models\Endereco;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Set;
@@ -229,7 +231,7 @@ class PedidoResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            EnderecoRelationManager::class
         ];
     }
 

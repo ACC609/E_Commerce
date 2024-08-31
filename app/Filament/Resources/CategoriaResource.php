@@ -27,6 +27,8 @@ class CategoriaResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
+    protected static ?string $recordTitleAttribute = 'nome';
+
     public static function form(Form $form): Form
     {
         return $form

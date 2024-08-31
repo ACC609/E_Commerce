@@ -12,11 +12,11 @@ class Endereco extends Model
 
     public function pedidos()
     {
-        return $this->belongsTo(Pedido::class);
+        return $this->belongsTo(Pedido::class, 'id_pedido');
     }
 
-    public function getFullNameAtributes()
+    public function getFullNameAttribute()
     {
-        return "{$this->primeiro_nome} {$this->ultimo_nome}";
+        return $this->primeiro_nome . ' ' . $this->ultimo_nome;
     }
 }
